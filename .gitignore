@@ -1,2 +1,4 @@
 /jsreportapp/node_modules/
 .env
+/jsreportapp/data/storage/
+/jsreportapp/logs/

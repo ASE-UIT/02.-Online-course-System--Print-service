@@ -1,5 +1,9 @@
 {
   "name": "jsreport-server",
+  "scripts": {
+    "start": "node server.js",
+    "jsreport": "jsreport start"
+  },
   "dependencies": {
     "@jsreport/jsreport-docx": "^4.6.0",
     "@jsreport/jsreport-handlebars": "^4.0.1",
