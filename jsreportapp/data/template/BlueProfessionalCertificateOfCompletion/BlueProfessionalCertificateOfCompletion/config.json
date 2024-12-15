@@ -1,0 +1,20 @@
+{
+    "name": "BlueProfessionalCertificateOfCompletion",
+    "engine": "handlebars",
+    "recipe": "docx",
+    "data": {
+        "shortid": "AMxWtTU57"
+    },
+    "docx": {
+        "templateAssetShortid": "VHZHD8h"
+    },
+    "shortid": "xAAmd9-cqo",
+    "creationDate": {
+        "$$date": 1734289007747
+    },
+    "modificationDate": {
+        "$$date": 1734289007747
+    },
+    "_id": "rbuuNvSeHT6gM2u1",
+    "$entitySet": "templates"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "jsreport-server",
+  "dependencies": {
+    "@jsreport/jsreport-docx": "^4.6.0",
+    "@jsreport/jsreport-handlebars": "^4.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsreport": "^4.7.0"
+  }
+}
