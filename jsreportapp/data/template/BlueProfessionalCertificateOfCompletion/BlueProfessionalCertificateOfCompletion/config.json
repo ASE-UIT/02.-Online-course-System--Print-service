@@ -3,18 +3,18 @@
     "engine": "handlebars",
     "recipe": "docx",
     "data": {
-        "shortid": "AMxWtTU57"
+        "shortid": "ZnPSsPyBY"
     },
     "docx": {
-        "templateAssetShortid": "VHZHD8h"
+        "templateAssetShortid": "dkTY7vg"
     },
-    "shortid": "xAAmd9-cqo",
+    "shortid": "abQEoCeoWw",
     "creationDate": {
-        "$$date": 1734289007747
+        "$$date": 1734540413395
     },
     "modificationDate": {
-        "$$date": 1734289007747
+        "$$date": 1734540413395
     },
-    "_id": "rbuuNvSeHT6gM2u1",
+    "_id": "9gUAcY1Fbpfq3RX9",
     "$entitySet": "templates"
 }
