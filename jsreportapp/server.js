@@ -52,7 +52,6 @@ app.post("/generate-certificate", async (req, res) => {
       data: { studentName, courseName, date, instructor, appFounder },
     });
 
-    // Tạo file tạm để lưu file Word
     const uniqueId = uuidv4();
     const wordPath = path.join(__dirname, `${uniqueId}.docx`);
     const pdfPath = path.join(__dirname, `${uniqueId}.pdf`);
@@ -72,8 +71,6 @@ app.post("/generate-certificate", async (req, res) => {
           return res.status(500).send("Error generating PDF");
         }
 
-        console.log("tes", jpegPath.replace(".jpg", ""));
-
         // Chuyển từ PDF sang JPEG
         exec(
           `pdftoppm -jpeg ${pdfPath} ${jpegPath.replace(".jpg", "")}`,
@@ -86,15 +83,26 @@ app.post("/generate-certificate", async (req, res) => {
             // Gửi file JPEG làm phản hồi
             res.setHeader("Content-Type", "image/jpeg");
             const resultPath = `${jpegPath.replace(".jpg", "")}-1.jpg`;
-            res.sendFile(resultPath);
+            // res.sendFile(resultPath);
+
+            res.sendFile(resultPath, (sendErr) => {
+              if (sendErr) {
+                console.error("Error sending JPEG:", sendErr);
+              }
+
+              // Clean up temporary files
+              [wordPath, pdfPath, resultPath].forEach((file) => {
+                fs.unlink(file, (unlinkErr) => {
+                  if (unlinkErr) {
+                    console.error(`Error deleting file ${file}:`, unlinkErr);
+                  }
+                });
+              });
+            });
           }
         );
       }
     );
-
-    // // Set response header to indicate file download type
-    // res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-    // res.send(report.content);  // Send the generated report as the response
   } catch (error) {
     console.error("Error generating report:", error);
     res.status(500).send("Error generating report");
