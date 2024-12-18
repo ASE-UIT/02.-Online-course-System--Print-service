@@ -8,7 +8,12 @@
     "@jsreport/jsreport-docx": "^4.6.0",
     "@jsreport/jsreport-handlebars": "^4.0.1",
     "cors": "^2.8.5",
+    "docx-pdf": "^0.0.1",
     "express": "^4.21.2",
-    "jsreport": "^4.7.0"
+    "jsreport": "^4.7.0",
+    "pdf-lib": "^1.17.1",
+    "pdf-poppler": "^0.2.1",
+    "temp": "^0.9.4",
+    "uuid": "^11.0.3"
   }
 }

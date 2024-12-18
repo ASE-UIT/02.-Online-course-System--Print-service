@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  se214-print-service:
+    container_name: se214-print-service
+    build:
+      context: .
+    restart: unless-stopped
+    ports:
+      - "5392:3000"
+    networks:
+      - main-network
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 512M
+
+networks:
+  main-network:
+    driver: bridge
